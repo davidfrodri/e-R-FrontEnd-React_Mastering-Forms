@@ -39,18 +39,18 @@ const UserForm = () => {
         <Form className='user-form'>
             <div className='row'>
                 <label htmlFor="firstName">First Name</label>
-                <Field className='Field' id="firstName" name="firstName" placeholder="First Name" />
+                <Field className={touched.firstName && errors.firstName ? 'FieldError' : 'Field'} id="firstName" name="firstName" placeholder="First Name" />
             </div>
             {touched.firstName && errors.firstName && <ErrorMessage name='firstName' component='div' className='error-message' />}
             <div className='row'>
                 <label htmlFor="lastName">Last Name</label>
-                <Field className='Field' id="lastName" name="lastName" placeholder="Last Name" />
+                <Field className={touched.lastName && errors.lastName ? 'FieldError' : 'Field'} id="lastName" name="lastName" placeholder="Last Name" />
             </div>
             {touched.lastName && errors.lastName && <ErrorMessage name='lastName' component='div' className='error-message' />}
             <div className='row'>
                 <label htmlFor="age">Age</label>
                 <Field
-                className='Field'
+                className={touched.age && errors.age ? 'FieldError' : 'Field'}
                 id="age"
                 name="age"
                 placeholder="Age"
@@ -125,9 +125,9 @@ const UserForm = () => {
 
             <div className='row'>
                 <label htmlFor="notes">Notes:</label>
-                <Field className='Field' as="textarea" name="notes" id="notes"  rows={2} placeholder='Notes' />
-                {touched.notes && errors.notes && <ErrorMessage name='notes' component='div' className='error-message' />}
+                <Field className={touched.notes && errors.notes ? 'FieldError' : 'Field'} as="textarea" name="notes" id="notes"  rows={2} placeholder='Notes' />
             </div>
+            {touched.notes && errors.notes && <ErrorMessage name='notes' component='div' className='error-message' />}
 
             <div className='buttons'>
                 <button 

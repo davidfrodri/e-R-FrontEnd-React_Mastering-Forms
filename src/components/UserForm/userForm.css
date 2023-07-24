@@ -6,7 +6,19 @@ body {
     background-color: #F5F5F5;
 }
 
+input .field {
+    border: 2px solid #007bff; 
+}
+
 .Field {
+    width: 70%;
+    padding: 3px;
+}
+
+.FieldError {
+    appearance: none;
+    border: 2px solid #ff0000; 
+    background: none;
     width: 70%;
     padding: 3px;
 }
@@ -81,6 +93,8 @@ body {
   }
 
 .pre {
+    overflow-y: auto;
+
     padding: 20px;
     background-color: #E5E5E5;
     box-shadow: inset 0 0 3px 1px rgba(0, 0, 0, 0.2);
